@@ -1,5 +1,5 @@
-from mainapp import bot, WEBHOOK_HOST, WEBHOOK_PATH
 import time
+from app import bot, WEBHOOK_HOST, WEBHOOK_PATH
 webhook_url = WEBHOOK_HOST + WEBHOOK_PATH
 
 print(bot.remove_webhook())
