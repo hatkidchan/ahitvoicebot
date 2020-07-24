@@ -35,8 +35,6 @@ class PackHandler:
                       query_id: str,
                       results: List[InlineResult],
                       next_offset: Optional[int] = None) -> None:
-        if not results:
-            results = [INLINE_RESULT_EMPTY_SET]
         try:
             self.bot.answer_inline_query(query_id, results,
                                          next_offset=next_offset)
