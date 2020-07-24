@@ -12,10 +12,13 @@ Please, say what you did to @hatkidchan'''
 
 @bot.inline_handler(func=lambda q: True)
 def bot_inline_fb(q):
-    bot.answer_inline_query(q.id, [
-        InlineQueryResultArticle(
-            uuid4().hex,
-            'How did you got here?',
-            InputTextMessageContent(help_msg))
-    ], cache_time=0, is_personal=True)
+    try:
+        bot.answer_inline_query(q.id, [
+            InlineQueryResultArticle(
+                uuid4().hex,
+                'How did you got here?',
+                InputTextMessageContent(help_msg))
+        ], cache_time=0, is_personal=True)
+    except:
+        pass
 
