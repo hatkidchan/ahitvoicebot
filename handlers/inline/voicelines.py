@@ -49,7 +49,7 @@ class PackHandler:
 
         for line in data[start : start + 30]:
             url, name, _ = line
-            if self.prefix == 'global':
+            if self.prefix == 'glob':
                 name = f'{line.parent_pack.prefix} | {name}'
             results.append(InlineQueryResultVoice(uuid(), url, name))
             
@@ -68,7 +68,7 @@ class PackHandler:
             url, name, _ = line
             if prob < 30:
                 break
-            if self.prefix == 'global':
+            if self.prefix == 'glob':
                 name = f'{line.parent_pack.prefix} | {name}'
             display = f'{prob}% {name}'
             results.append(InlineQueryResultVoice(uuid(), url, display))
