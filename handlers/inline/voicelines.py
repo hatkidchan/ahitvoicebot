@@ -55,7 +55,7 @@ class PackHandler:
                 name = f'{line.parent_pack.prefix} | {name}'
             results.append(InlineQueryResultVoice(uuid(), url, name))
             
-        next_offset = start + 30 if len(data) > start + 30 else None
+        next_offset = start + 30 if len(data[start:]) >= 30 else None
         self.answer_inline(query.id, results, next_offset=next_offset)
 
     def handle_search(self, query: InlineQuery) -> None:
@@ -75,7 +75,7 @@ class PackHandler:
             display = f'{prob}% {name}'
             results.append(InlineQueryResultVoice(uuid(), url, display))
 
-        next_offset = start + 30 if len(data) > start + 30 else None
+        next_offset = start + 30 if len(data[start:]) >= 30 else None
         self.answer_inline(query.id, results, next_offset=next_offset)
     
     def test_listing(self, query: InlineQuery) -> bool:
