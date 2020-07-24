@@ -1,0 +1,4 @@
+pytelegrambotapi
+fuzzywuzzy
+python-Levenshtein
+flask
